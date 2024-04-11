@@ -14,5 +14,6 @@ COPY sql/installSQLtools.sh installSQLtools.sh
 RUN bash ./installSQLtools.sh \
      && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
-# Install .NET Aspire
-RUN sudo -c "dotnet workload update && dotnet workload install aspire"
+# Update .NET workload and install .NET Aspire
+RUN sudo dotnet workload update \
+    && sudo dotnet workload install aspire
