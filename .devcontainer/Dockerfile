@@ -15,4 +15,4 @@ RUN bash ./installSQLtools.sh \
      && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
 # Install .NET Aspire
-RUN su vscode -c "ddotnet workload update && dotnet workload install aspire" 2>&1
+RUN sudo -c "dotnet workload update && dotnet workload install aspire"
