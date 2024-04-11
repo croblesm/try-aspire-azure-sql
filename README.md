@@ -1,0 +1,1 @@
+# try-aspire-azure-sql
