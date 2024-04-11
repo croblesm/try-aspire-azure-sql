@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+# Excluding database project
+!database/Library/bin/Debug/
+
 # MacOSX files
 # General
 **/.DS_Store
@@ -47,6 +50,7 @@ mono_crash.*
 
 # Build results
 [Dd]ebug/
+![Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
@@ -57,6 +61,7 @@ x86/
 [Aa][Rr][Mm]64/
 bld/
 [Bb]in/
+![Bb]in/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
