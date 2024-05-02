@@ -9,21 +9,22 @@
             "command": "code",
             "args": [
                 "--goto",
-                "${workspaceFolder}/scripts/verifyDatabase.sql",
-                "ms-mssql.mssql",
-                "mssql.execute"
+                "${workspaceFolder}/scripts/verifyDatabase.sql"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
             "presentation": {
                 "reveal": "always",
                 "panel": "new"
             }
         },
         {
-            // sudo dotnet workload update
+            "label": "Build SQL Database project",
+            "type": "shell",
+            "command": "dotnet build",
+            "options": {
+                "cwd": "${workspaceFolder}/database/Library"
+            }
+        },
+        {
             "label": "Update .NET SDK",
             "type": "shell",
             "command": "sudo dotnet workload update"
