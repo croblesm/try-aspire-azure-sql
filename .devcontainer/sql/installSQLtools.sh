@@ -7,9 +7,10 @@ sudo apt-get install sqlcmd
 echo "Go-SQLCmd installed."
 
 echo "Installing Sqlpackage ..."
-curl -sSL -o sqlpackage.zip "https://aka.ms/sqlpackage-linux"
-mkdir /opt/sqlpackage
-unzip sqlpackage.zip -d /opt/sqlpackage 
-rm sqlpackage.zip
-chmod a+x /opt/sqlpackage/sqlpackage
+# curl -sSL -o sqlpackage.zip "https://aka.ms/sqlpackage-linux"
+# mkdir /opt/sqlpackage
+# unzip sqlpackage.zip -d /opt/sqlpackage 
+# rm sqlpackage.zip
+# chmod a+x /opt/sqlpackage/sqlpackage
+dotnet tool install --global microsoft.sqlpackage
 echo "Sqlpackage installed."

@@ -22,9 +22,6 @@
     </SqlCmdVariable>
   </ItemGroup>
   <ItemGroup>
-    <PreDeploy Include="preDeployment.sql" />
-  </ItemGroup>
-  <ItemGroup>
     <PostDeploy Include="postDeployment.sql" />
   </ItemGroup>
   <Target Name="BeforeBuild">

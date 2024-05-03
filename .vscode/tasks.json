@@ -25,6 +25,17 @@
             }
         },
         {
+            "label": "Deploy SQL Database project",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "${workspaceFolder}/.devcontainer/sql/postCreateCommand.sh",
+                "P@ssw0rd!",
+                "database/Library/bin/Debug",
+                ""
+            ]
+        },
+        {
             "label": "Update .NET SDK",
             "type": "shell",
             "command": "sudo dotnet workload update"

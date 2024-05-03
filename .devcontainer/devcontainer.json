@@ -41,7 +41,7 @@
 	"forwardPorts": [5000, 5001, 8000, 1433],
 
     // Post create commands to run after the container is created.
-	"postCreateCommand": "bash .devcontainer/sql/postCreateCommand.sh P@ssw0rd! './bin/Debug/' './.devcontainer/sql/'",
+	"postCreateCommand": "bash .devcontainer/sql/postCreateCommand.sh P@ssw0rd! 'database/Library/bin/Debug' ''",
 
 	// Post start commands to run after the container is started.
 
