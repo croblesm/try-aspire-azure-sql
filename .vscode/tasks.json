@@ -29,10 +29,8 @@
             "type": "shell",
             "command": "bash",
             "args": [
-                "${workspaceFolder}/.devcontainer/sql/postCreateCommand.sh",
-                "P@ssw0rd!",
-                "database/Library/bin/Debug",
-                ""
+                ".devcontainer/sql/postCreateCommand.sh",
+                "database/Library/bin/Debug"
             ]
         },
         {
