@@ -1,9 +1,11 @@
 #!/bin/bash
 dacpac="false"
 sqlfiles="false"
-SApassword=$1
-dacpath=$2
-sqlpath=$3
+# Load SA_PASSWORD from .env file
+export $(grep -v '^#' .devcontainer/.env | xargs)
+SApassword=$SA_PASSWORD
+dacpath=$1
+sqlpath=$2
 
 echo "SELECT * FROM SYS.DATABASES" | dd of=testsqlconnection.sql
 for i in {1..60};

@@ -16,7 +16,7 @@
 						"database": "master",
 						"authenticationType": "SqlLogin",
 						"user": "sa",
-						"password": "P@ssw0rd!",
+						"password": "${env:SA_PASSWORD}",
 						"savePassword": true,
 						"profileName": "LocalDev",
 						"trustServerCertificate": true
@@ -41,8 +41,7 @@
 	"forwardPorts": [5000, 5001, 8000, 1433],
 
     // Post create commands to run after the container is created.
-	//"postCreateCommand": "bash .devcontainer/sql/postCreateCommand.sh P@ssw0rd! 'database/Library/bin/Debug' ''",
-	"postCreateCommand": "bash .devcontainer/sql/postCreateCommand.sh ${env:SA_PASSWORD} 'database/Library/bin/Debug' ''",
+	"postCreateCommand": "bash .devcontainer/sql/postCreateCommand.sh 'database/Library/bin/Debug' ''",
 
 	// Post start commands to run after the container is started.
 
@@ -62,10 +61,5 @@
 	}
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
-
-	// ,
-	// "remoteEnv": {
-    //     "SA_PASSWORD": "P@ssw0rd!"
-    // }
 
 }
