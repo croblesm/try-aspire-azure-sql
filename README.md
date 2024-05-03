@@ -43,7 +43,7 @@ This Dev Container includes a preconfigured database, specifically tailored for 
 
 This template creates two containers, one for the Dev Container that includes .NET and Aspire, and one for Microsoft SQL Server. You will be connected to the Ubuntu, and from within that container, the MS SQL container will be available on **`localhost`** port 1433. The Dev Container also includes supporting scripts in the `.devcontainer/sql` folder used to configure the `Library` sample database.
 
-The SQL container is deployed from the latest developer edition of Microsoft SQL 2022. The database(s) are made available directly in the Codespace/VS Code through the MSSQL extension with a connection labeled "LocalDev". The default `sa` user password is set to `P@ssw0rd!`. The default SQL port is mapped to port `1433` in `.devcontainer/docker-compose.yml`.
+The SQL container is deployed from the latest developer edition of Microsoft SQL 2022. The database(s) are made available directly in the Codespace/VS Code through the MSSQL extension with a connection labeled "LocalDev". The default `sa` user password is set using the .devcontainer/.env file. The default SQL port is mapped to port `1433` in `.devcontainer/docker-compose.yml`.
 
 .NET Aspire is a cutting-edge framework crafted for developing cloud-native applications, with a primary focus on containerized environments. Engineered with .NET Core, Aspire empowers developers to architect scalable and resilient applications optimized for cloud deployment.
 
@@ -70,6 +70,14 @@ This task builds the SQL Database project. It runs the command `dotnet build` in
 
 This task is optional, but it is useful to verify the database schema. You can use this SQL Database project to make changes to the database schema and deploy it to the SQL Server container.
 
+##### Deploy SQL Database Project
+
+This task involves deploying the SQL Database project to your SQL Server container. It executes the `postCreateCommand.sh` script found in the `.devcontainer/sql` directory of your workspace.
+
+The `postCreateCommand.sh` script requires one argument: the path to the directory containing the .dacpac file for the SQL Database project. In this scenario, that directory is `database/Library/bin/Debug`.
+
+It utilizes the sqlpackage command-line utility to update the database schema using the .dacpac file, employing authentication credentials from the `.env` file situated in the `.devcontainer` directory.
+
 ##### Trust HTTPS certificate for .NET Aspire
 
 This task trusts the HTTPS certificate for the .NET Aspire project. It runs the command `dotnet dev-certs https --trust`.
@@ -80,7 +88,12 @@ This task updates the .NET SDK. This update ensures that .NET Aspire can leverag
 
 #### Changing the sa password
 
-To change the `sa` user password, change the value in `.devcontainer/docker-compose.yml` and `.devcontainer/devcontainer.json`.
+To adjust the sa password, you need to modify the `.env` file located within the `.devcontainer` directory. This password is crucial for the creation of the SQL Server container and the deployment of the Library database using the `database/Library/bin/Debug/Library.dacpac` file.
+
+The password must comply with the following rules:
+
+- It should have a minimum length of 8 characters.
+- It should include characters from at least three of the following categories: uppercase letters, lowercase letters, numbers, and non-alphanumeric symbols.
 
 #### Database deployment
 
