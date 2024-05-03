@@ -1,3 +1,6 @@
+-- Copyright (c) Microsoft Corporation.
+-- Licensed under the MIT License.
+
 -- This file contains SQL statements that will be executed before the build script.
 -- App user
 ---------------------------------------------------------------------------

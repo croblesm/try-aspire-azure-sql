@@ -1,5 +1,5 @@
 // For format details, see https://aka.ms/devcontainer.json. 
-// For config options, see the README at: https://github.com/devcontainers/templates/tree/main/src/dotnet-mssql
+// For config options, see the README at: <Final link goes here>
 {
 	"name": ".NET with Aspire and SQL Server",
 	"dockerComposeFile": "docker-compose.yml",
@@ -44,6 +44,7 @@
 	"postCreateCommand": "bash .devcontainer/sql/postCreateCommand.sh 'database/Library/bin/Debug'",
 
 	// Post start commands to run after the container is started.
+	
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
