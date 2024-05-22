@@ -1,6 +1,6 @@
 # Dev Container - .NET with Aspire and Azure SQL
 
-[![Open in Remote - Containers](https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/vscode-remote-try-dab)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/try-aspire-azure-sql/tree/main)
 
 This repository offers a Dev Container template, enabling you to effortlessly explore **.NET Aspire** and **Azure SQL**. In just a few simple steps, you can dive into the capabilities of these powerful technologies.
 
